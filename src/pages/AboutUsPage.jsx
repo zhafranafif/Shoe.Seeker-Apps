@@ -17,7 +17,8 @@ const AboutUsPage = () => {
         <img src={AboutUsBanner} alt="Team Work" />
       </div>
       <div className='aboutus-bannerandquote d-flex my-5 justify-content-around'>
-        <p style={{maxWidth:'500px', fontSize:'24px'}}><i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos labore culpa quia modi provident obcaecati ut similique quaerat reprehenderit"</i></p>
+        <p style={{ maxWidth: '500px', fontSize: '24px', fontWeight: "bold" }}><i>"Sneakerhead. Sneaker addict. Sneaker Slave. Call it what you want; there's a certain thrill, like an itch only shoes
+          can scratch, that sneakerheads feel for their passion"</i></p>
         <img src={SecondBanner} alt="Team Work" style={{width:'450px' , height:'300px', borderRadius:'3px'}}/>
       </div>
     </div>

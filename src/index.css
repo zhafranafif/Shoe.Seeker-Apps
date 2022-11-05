@@ -198,6 +198,8 @@ nav{
   }
   .card-text{
     height:80px;  
+    font-size: 22px;
+    font-weight: bold;
   }
   
   .card-container::before, .card::after {
@@ -496,3 +498,109 @@ nav{
   .btn:hover{
     transform: scale(1.1,1.1);
   }
+.vans-input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.vans-input {
+  cursor: pointer;
+  padding-left: 2rem; 
+  vertical-align: middle;
+  position: relative;
+}
+
+.vans-input::before,
+.vans-input::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.vans-input::before {
+  background-color: #fff;
+  border-radius: 0%;
+  border: 1px solid #666464;
+  width: 1.5rem; 
+  height: 1.5rem; 
+  transform: translateY(-50%);
+  top: 50%;
+  left: .25rem;
+}
+
+.vans-input::after {
+  border-bottom: 3px solid #666464; 
+  border-left: 3px solid #666464; 
+  opacity: 0; 
+  height: 8px; 
+  width: 18px; 
+  transform: rotate(-45deg);
+  top: -7px; 
+  left: 8px; 
+  transition: opacity .3s;
+}
+.vans-input:checked::after {
+  opacity: 1;
+}
+.converse-input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.converse-input {
+  cursor: pointer;
+  padding-left: 2rem; 
+  vertical-align: middle;
+  position: relative;
+}
+
+.converse-input::before,
+.converse-input::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.converse-input::before {
+  background-color: #fff;
+  border-radius: 0%;
+  border: 1px solid #666464;
+  width: 1.5rem; 
+  height: 1.5rem; 
+  transform: translateY(-50%);
+  top: 50%;
+  left: .25rem;
+}
+
+.converse-input::after {
+  border-bottom: 3px solid #666464; 
+  border-left: 3px solid #666464; 
+  opacity: 0; 
+  height: 8px; 
+  width: 18px; 
+  transform: rotate(-45deg);
+  top: -7px; 
+  left: 8px; 
+  transition: opacity .3s;
+}
+.converse-input:checked::after {
+  opacity: 1;
+}
+.filter-container label {
+  padding: 8px 0;
+  display: block;
+}

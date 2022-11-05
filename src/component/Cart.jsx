@@ -6,6 +6,10 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 
 import { TiDeleteOutline } from 'react-icons/ti';
 import { DeleteFromCart } from '../hooks/DeleteFromCart';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from './Loading';
 
 const Cart = () => {
   const [counter, setcounter] = useState(1)
@@ -14,7 +18,9 @@ const Cart = () => {
   
   if (itsProductLoading) {
     return (
-      <h1>Loading...</h1>
+      <div className='mt-5'>
+          <Loading/>
+      </div>
     )
   }
   if (itsProductError) {
@@ -34,6 +40,13 @@ const Cart = () => {
       setcounter(1)
     }
   }
+  const notifyDelete = () => {
+    toast.error("Product Deleted from Cart!", {
+        position: toast.POSITION.TOP_CENTER
+    });
+}
+
+  const subTotal = itsProductCart?.shoeseeker_v2_cart.reduce((a,b) => a += b.cart_product.product_price, 0)
 
   return (
     <div className="cart-wrapper">
@@ -70,9 +83,9 @@ const Cart = () => {
               <div className="item-desc">
                 <div className="flex top">
                   <h5 className='me-3'>{item.cart_product.product_name}</h5>
-                  <h4>{item.cart_product.product_price}</h4>
+                  <h4 style={{fontWeight: 'bolder'}}>${item.cart_product.product_price}</h4>
                 </div>
-                <div className="d-flex justify-content-between align-items-baseline">
+                <div className="d-flex justify-content-between align-items-baseline mt-4">
                   <div>
                   <p className="quantity-desc ">
                     <span className="minus me-2" onClick={increment}>
@@ -85,14 +98,16 @@ const Cart = () => {
                   <button
                     type="button"
                     className="remove-item"
-                    onClick={() => deleteItem({
-                      variables: {
-                        id : item.id
-                      }
-                    })}
+                    onClick={() => {
+                      deleteItem({
+                        variables: {
+                          id: item.id
+                        }
+                      }); notifyDelete()}}
                   >
                     <TiDeleteOutline />
                   </button>
+                  <ToastContainer/>
                 </div>
               </div>
             </div>
@@ -102,7 +117,7 @@ const Cart = () => {
           <div className="cart-bottom">
             <div className="total">
               <h3>Subtotal:</h3>
-              <h3></h3>
+              <h3 style={{color: "#f02d34", fontWeight: 'bolder'}}>{new Intl.NumberFormat('en-emodeng',{ style: 'currency', currency: 'USD' }).format(subTotal.toFixed(2))}</h3>
             </div>
           </div>
         )}

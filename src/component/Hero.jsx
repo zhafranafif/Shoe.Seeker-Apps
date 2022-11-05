@@ -12,9 +12,8 @@ const Hero = () => {
                   Made to Sneaker Hunter All
                   Over The World!
                 </h2>
-                <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, animi cum ex
-            quisquam nostrum aperiam eum, laudantium ipsam repellat libero totam exercitationem commodi fuga temporibus, cupiditate est?Error, a dolores.           
+                <p style={{fontSize: "24px"}}>
+                The secret sauce to happiness is finding both comfort and good looks in your sneakers!           
                 </p>
                 <button type="button" className="btn btn-primary">Discover More<i className="bi bi-arrow-right ms-2"/></button>
               </div>

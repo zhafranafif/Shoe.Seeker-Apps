@@ -8,14 +8,8 @@ import { getQuantityLength } from "../graphql/query"
 
 
 const Navbar = () => {
-  const [showCart, setshowCart] = useState(false)
-
   const { data } = useQuery(getQuantityLength)
   console.log(data)
-
-  const onHandleButton = () => {
-    setshowCart(!showCart)
-  }
     return (
       <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -60,7 +54,7 @@ const Navbar = () => {
             <a  className="cart-icon" >
         <BsFillPersonFill/>
               </a>
-              <a href='/cart' className="cart-icon" onClick={() => onHandleButton} >
+              <a href='/cart' className="cart-icon">
         <AiOutlineShopping />
                 <span className="cart-item-qty">{data?.shoeseeker_v2_cart.length}</span>
                 </a>

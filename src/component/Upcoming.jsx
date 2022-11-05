@@ -4,6 +4,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useQuery } from '@apollo/client';
 import { getAllUpcomingShoes } from '../graphql/query';
+import Loading from './Loading';
 
 const Upcoming = () => {
     const {data, error, loading} = useQuery(getAllUpcomingShoes)
@@ -16,7 +17,9 @@ const Upcoming = () => {
     }
     if (loading) {
         return (
-            <h1>Loading...</h1>
+    <div className='mt-5'>
+          <Loading/>
+      </div>
         )
     }
     if (error) {
