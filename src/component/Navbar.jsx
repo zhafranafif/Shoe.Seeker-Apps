@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useQuery } from "@apollo/client"
 import React from "react"
-import { useState } from "react"
 import { AiOutlineShopping } from 'react-icons/ai'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { getQuantityLength } from "../graphql/query"
