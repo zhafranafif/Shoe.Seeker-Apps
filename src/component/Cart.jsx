@@ -107,9 +107,9 @@ const Cart = () => {
                   >
                     <TiDeleteOutline />
                   </button>
-                  <ToastContainer/>
                 </div>
               </div>
+              <ToastContainer/>
             </div>
           ))}
         </div>
